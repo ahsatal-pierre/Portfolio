@@ -13,7 +13,6 @@
   border-bottom: 2px solid black;
 }
 
-
 .blink {
   padding-left: 40vw;
   animation: blink-animation 1s steps(5, start) infinite;

@@ -20,7 +20,7 @@ function Post(props) {
         -&gt;
       </button>
       {isShown && (
-        <>
+        <div className="childPost">
           <h4>made with {techno}</h4>
           <h4>{content}</h4>
           <img src={lien} alt="projectPict  " />
@@ -31,7 +31,7 @@ function Post(props) {
           >
             Take a look
           </button>
-        </>
+        </div>
       )}
     </div>
   );
