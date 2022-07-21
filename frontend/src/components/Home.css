@@ -9,5 +9,25 @@
 }
 
 .Posts {
-  border: 2px solid black;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
 }
+
+
+.blink {
+  padding-left: 40vw;
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1s steps(5, start) infinite;
+}
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
+
+  

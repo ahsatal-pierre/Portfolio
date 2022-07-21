@@ -2,8 +2,6 @@ const dotenv = require("dotenv");
 const express = require("express");
 const cors = require("cors");
 
-/* const Joi = require("joi");  */
-
 const app = express();
 app.use(express.json());
 

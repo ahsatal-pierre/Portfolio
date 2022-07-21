@@ -2,7 +2,7 @@ import Post from "./Posts";
 import "./Posts.css";
 
 function PostsList({ projects }) {
-  console.log(projects);
+   console.log("project", projects);
   return (
     <div className="postsList">
       {projects.map((project) => (

@@ -1,10 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Home.css";
+import Footer from "./Footer";
 import PostsList from "./PostsList";
 
 function Home() {
   const [data, setData] = useState();
+
   useEffect(() => {
     axios
       .get("http://localhost:5000/project")
@@ -18,9 +20,10 @@ function Home() {
     <div className="App">
       <header className="App-header" />
       <div className="root_compo">
-        <p>Welcome to my portfolio</p>
+        <p className="blink">Portfolio</p>
         {data ? <PostsList projects={data} /> : null}
       </div>
+      <Footer />
     </div>
   );
 }

@@ -1,7 +1,13 @@
 ## Concept
 
-This template is meant to serve as a foundation for every P2/P3 following the React-Express-MySQL stack, as learned in Wild Code School.
-It's pre-configured with a set of tools which'll help students produce industry-quality and easier-to-maintain code, while staying as simple as possible to use.
+    it's a simple portfolio. 
+Even though I think it would have been better to do it only with html, css and javascript; I decided to use React, with a bit of bootstrap. Just for fun. And for practice. 
+    
+    I chose to create it in the brutalist style.  
+    Like concrete, I wanted to give this website a primitive or wild look. In this, the use of other technologies
+than html/css may seem contradictory. 
+The question that this work brings is to ask if this contradiction can be erased. Is the brutalism of the early days with its angular, massive and repetitive aspects is not compatible with the composition in component of React? 
+
 
 ## Setup & Use
 
