@@ -1,0 +1,16 @@
+.navbar {
+    min-width: 100vW;
+    position: fixed;
+    top: 0px;
+}
+
+.navbar-brand {
+    padding-left: 20vw;
+    text-decoration: none;
+    color: black;
+}
+
+.container-fluid {
+    padding-top: 2vw;
+    border-bottom: 1px solid black;
+}
