@@ -9,7 +9,7 @@ function Footer() {
     <div style={style}>
       <div>Footer</div>
       <a href="mailto: asathal.pierre@gmail.com" className="email-link">
-        pierre@gmail.com
+        <strong>pierre@gmail.com</strong>
       </a>
     </div>
   );
