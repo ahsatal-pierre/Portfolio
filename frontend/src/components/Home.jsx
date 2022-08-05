@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Home.css";
+import Gallery from "@components/Gallery";
 import Footer from "./Footer";
 import PostsList from "./PostsList";
 
@@ -22,6 +23,7 @@ function Home() {
       <div className="root_compo">
         <p className="blink">Portfolio</p>
         {data ? <PostsList projects={data} /> : null}
+        <Gallery />
       </div>
       <Footer />
     </div>
