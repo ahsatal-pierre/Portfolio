@@ -9,7 +9,7 @@ const Joi = require("joi");
 
 const connection = require("./db-config");
 
-const db = connection.promise();
+/* const db = connection.promise(); */
 app.use(cors());
 
 app.use((req, res, next) => {
