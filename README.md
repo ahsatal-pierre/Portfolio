@@ -1,7 +1,7 @@
 ## Concept
 
     it's a simple portfolio. 
-Even though I think it would have been better to do it only with html, css and javascript; I decided to use React, with a bit of bootstrap. Just for fun. And for practice. 
+Even though I think it would have been better to do it only with html, css and javascript; I decided to use React, ExpressJS, MySQL and a bit of bootstrap. Just for fun. And for practice. 
     
     I chose to create it in the brutalist style.  
     Like concrete, I wanted to give this website a primitive or wild look. In this, the use of other technologies

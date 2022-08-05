@@ -5,7 +5,7 @@ function Navbar() {
     <nav className="navbar navbar-fixed-top">
       <div className="container container-fluid">
         <a className="navbar-brand" href="/">
-          E que s'apelariá <strong>Asathal</strong>
+          Pierre <strong>Asathal</strong>
         </a>
       </div>
     </nav>

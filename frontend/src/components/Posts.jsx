@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./Posts.css";
 
 function Post(props) {
-  const { title, content, techno, photo, lien } = props;
+  const { title, content, techno, photo } = props;
   const [isShown, setIsShown] = useState(false);
 
   const handleClick = (event) => {
@@ -23,7 +23,6 @@ function Post(props) {
         <div className="childPost">
           <h4>made with {techno}</h4>
           <h4>{content}</h4>
-          <img src={lien} alt="projectPict  " />
           <button
             id="button2"
             type="button"
