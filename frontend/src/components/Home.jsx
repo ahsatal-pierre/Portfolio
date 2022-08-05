@@ -7,10 +7,11 @@ import PostsList from "./PostsList";
 
 function Home() {
   const [data, setData] = useState();
+  const url = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/project")
+      .get(url)
       .then((response) => response.data)
       .then((dbdata) => {
         setData(dbdata);
