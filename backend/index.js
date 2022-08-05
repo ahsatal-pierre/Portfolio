@@ -5,9 +5,11 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 
+const Joi = require("joi");
+
 const connection = require("./db-config");
 
-const db = connection.promise();
+/* const db = connection.promise(); */
 app.use(cors());
 
 app.use((req, res, next) => {
@@ -29,6 +31,29 @@ app.get("/project", (req, res) => {
   if (req.query.title) {
     sql += " WHERE title = ?";
     sqlValues.push(req.query.title);
+  }
+
+  connection.query(sql, sqlValues, (err, results) => {
+    if (err) {
+      res.status(500).send("Error retrieving project from database");
+    } else {
+      res.json(results);
+    }
+  });
+});
+
+app.get("/project", (req, res) => {
+  let sql = "SELECT * FROM project";
+  const sqlValues = [];
+  if (req.query.techno) {
+    sql += " WHERE techno = ?";
+    sqlValues.push(req.query.techno);
+  } else if (req.query.content) {
+    sql += " WHERE content = ?";
+    sqlValues.push(req.query.content);
+  } else if (req.query.photo) {
+    sql += " WHERE photo = ?";
+    sqlValues.push(req.query.photo);
   }
 
   connection.query(sql, sqlValues, (err, results) => {

@@ -29,4 +29,9 @@
   }
 }
 
+#photoButton {
+  background: transparent;
+  border: none !important;
+  font-size: 50px;
+}
   
