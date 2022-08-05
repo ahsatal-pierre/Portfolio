@@ -44,7 +44,7 @@ function Gallery() {
           rows={1}
           gap={1}
           loop
-          autoplay={500}
+          autoplay={900}
           hideArrow="true"
         >
           <Carousel.Item>
