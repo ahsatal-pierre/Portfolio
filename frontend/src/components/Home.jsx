@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import "./Home.css";
-import Gallery from "@components/Gallery";
+import Gallery from "./Gallery";
 import Footer from "./Footer";
 import PostsList from "./PostsList";
 
@@ -10,12 +10,16 @@ function Home() {
   const url = import.meta.env.VITE_BACKEND_URL;
 
   useEffect(() => {
-    axios
-      .get(url)
-      .then((response) => response.data)
-      .then((dbdata) => {
-        setData(dbdata);
-      });
+    const fetchData = async () => {
+      await axios
+        .get(url)
+        .then((response) => response.data)
+        .then((dbdata) => {
+          setData(dbdata);
+        });
+    };
+
+    fetchData().catch((err) => console.log("oui", err));
   }, []);
 
   return (

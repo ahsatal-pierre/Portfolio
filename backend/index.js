@@ -5,11 +5,11 @@ const cors = require("cors");
 const app = express();
 app.use(express.json());
 
-const Joi = require("joi");
+/* const Joi = require("joi"); */
 
 const connection = require("./db-config");
 
-/* const db = connection.promise(); */
+const db = connection.promise();
 app.use(cors());
 
 app.use((req, res, next) => {
@@ -35,7 +35,7 @@ app.get("/project", (req, res) => {
 
   connection.query(sql, sqlValues, (err, results) => {
     if (err) {
-      res.status(500).send("Error retrieving project from database");
+      res.status(500).send("Error retrieving total from database");
     } else {
       res.json(results);
     }
@@ -58,7 +58,7 @@ app.get("/project", (req, res) => {
 
   connection.query(sql, sqlValues, (err, results) => {
     if (err) {
-      res.status(500).send("Error retrieving project from database");
+      res.status(500).send("Error retrieving baobab from database");
     } else {
       res.json(results);
     }
@@ -66,7 +66,7 @@ app.get("/project", (req, res) => {
 });
 
 // RETRIEVE ONE PROJECT
-app.get("/project/:id", (req, res) => {
+/* app.get("/project/:id", (req, res) => {
   const projectId = req.params.id;
   connection.query(
     "SELECT * FROM project WHERE id = ?",
@@ -78,10 +78,10 @@ app.get("/project/:id", (req, res) => {
       else res.status(404).send("project not found");
     }
   );
-});
+}); */
 
 // POST PROJECT
-app.post("/project", (req, res) => {
+/* app.post("/project", (req, res) => {
   const { title, texte } = req.body;
   const { error } = Joi.object({
     title: Joi.string().max(255).required(),
@@ -104,10 +104,10 @@ app.post("/project", (req, res) => {
       }
     );
   }
-});
+}); */
 
 // UPDATE PROJECT
-app.put("/project/:id", (req, res) => {
+/* app.put("/project/:id", (req, res) => {
   const projectId = req.params.id;
   const datbase = connection.promise();
   let existingProject = null;
@@ -132,10 +132,10 @@ app.put("/project/:id", (req, res) => {
         res.status(404).send(`project with id ${projectId} not found.`);
       else res.status(500).send("Error updating a project.");
     });
-});
+}); */
 
 // DELETE PROJECT
-app.delete("/project/:id", (req, res) => {
+/* app.delete("/project/:id", (req, res) => {
   const projectId = req.params.id;
   connection.query(
     "DELETE FROM project WHERE id = ?",
@@ -148,9 +148,9 @@ app.delete("/project/:id", (req, res) => {
       else res.status(404).send("project not found");
     }
   );
-});
+}); */
 
-app.listen(port, (error) => {
+app.listen(process.env.PORT || port, (error) => {
   connection.connect((err) => {
     if (err) {
       console.error(`error connecting: ${err.stack}`);
