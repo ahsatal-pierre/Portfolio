@@ -11,7 +11,7 @@ function Footer() {
     <div style={style}>
       <div>Footer</div>
       <a href="mailto: asathal.pierre@gmail.com" className="email-link">
-        <strong>click here to send me an email </strong>
+      <strong>Email </strong>
       </a>
       <a
         href="https://www.linkedin.com/in/pierre-asathal/"
@@ -19,7 +19,7 @@ function Footer() {
         target="_blank"
         rel="noreferrer"
       >
-        <strong>click here to Linkedin </strong>
+        <strong>Linkedin </strong>
       </a>
     </div>
   );
