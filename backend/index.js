@@ -9,7 +9,7 @@ app.use(express.json());
 
 const connection = require("./db-config");
 
-/* const db = connection.promise(); */
+/* const db = connection.promise();  */
 app.use(cors());
 
 app.use((req, res, next) => {
@@ -23,9 +23,10 @@ process.on("unhandledRejection", (error) => {
 });
 
 const port = process.env.PORT || 5000;
+const url = process.env.URL;
 
 // RETRIEVE PROJECTS
-app.get("/project", (req, res) => {
+app.get(url, (req, res) => {
   let sql = "SELECT * FROM project";
   const sqlValues = [];
   if (req.query.title) {
@@ -42,7 +43,7 @@ app.get("/project", (req, res) => {
   });
 });
 
-app.get("/project", (req, res) => {
+app.get(url, (req, res) => {
   let sql = "SELECT * FROM project";
   const sqlValues = [];
   if (req.query.techno) {
