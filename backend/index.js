@@ -23,7 +23,7 @@ process.on("unhandledRejection", (error) => {
 });
 
 const port = process.env.PORT || 5000;
-const url = process.env.URL;
+const url = "/project" || process.env.URL;
 
 // RETRIEVE PROJECTS
 app.get(url, (req, res) => {
