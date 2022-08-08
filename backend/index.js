@@ -9,6 +9,8 @@ app.use(express.json());
 
 const connection = require("./db-config");
 
+connection.connect();
+
 /* const db = connection.promise();  */
 app.use(cors());
 
