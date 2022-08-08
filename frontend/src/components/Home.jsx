@@ -12,7 +12,7 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       await axios
-        .get(`${url}/project`)
+        .get(`${url}`)
         .then((response) => response.data)
         .then((dbdata) => {
           setData(dbdata);

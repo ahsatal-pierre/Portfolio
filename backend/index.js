@@ -6,10 +6,19 @@ const app = express();
 app.use(express.json());
 
 /* const Joi = require("joi"); */
+/* 
+const connection = require("./db-config"); */
 
-const connection = require("./db-config");
+const port = process.env.PORT || 5000;
+// connection details
+const mysql = require("mysql2");
 
-connection.connect();
+const connection = mysql.createConnection({
+  host: "eu-cdbr-west-03.cleardb.net",
+  user: "b18a40e6c9209e",
+  password: "2873b2c1",
+  database: "heroku_e403c996856297a",
+});
 
 /* const db = connection.promise();  */
 app.use(cors());
@@ -24,10 +33,8 @@ process.on("unhandledRejection", (error) => {
   console.error("unhandledRejection", error);
 });
 
-const port = process.env.PORT || 5000;
-
 // RETRIEVE PROJECTS
-app.get("/project", (req, res) => {
+app.get("/", (req, res) => {
   let sql = "SELECT * FROM project";
   const sqlValues = [];
   if (req.query.title) {
@@ -44,7 +51,7 @@ app.get("/project", (req, res) => {
   });
 });
 
-app.get("/project", (req, res) => {
+app.get("/", (req, res) => {
   let sql = "SELECT * FROM project";
   const sqlValues = [];
   if (req.query.techno) {
