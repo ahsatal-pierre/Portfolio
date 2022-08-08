@@ -23,10 +23,9 @@ process.on("unhandledRejection", (error) => {
 });
 
 const port = process.env.PORT || 5000;
-const url = "/project" || process.env.URL;
 
 // RETRIEVE PROJECTS
-app.get(url, (req, res) => {
+app.get("/project", (req, res) => {
   let sql = "SELECT * FROM project";
   const sqlValues = [];
   if (req.query.title) {
@@ -43,7 +42,7 @@ app.get(url, (req, res) => {
   });
 });
 
-app.get(url, (req, res) => {
+app.get("/project", (req, res) => {
   let sql = "SELECT * FROM project";
   const sqlValues = [];
   if (req.query.techno) {

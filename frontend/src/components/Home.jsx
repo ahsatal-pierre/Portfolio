@@ -12,13 +12,12 @@ function Home() {
   useEffect(() => {
     const fetchData = async () => {
       await axios
-        .get(url)
+        .get(`${url}/project`)
         .then((response) => response.data)
         .then((dbdata) => {
           setData(dbdata);
         });
     };
-
     fetchData().catch((err) => console.log("oui", err));
   }, []);
 
